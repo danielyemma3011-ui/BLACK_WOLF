@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACK WOLF</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+
+    <aside id="sidebar" class="sidebar">
+        <div class="logo">BW</div>
+        <h2>BLACK WOLF</h2>
+
+        <nav>
+            <button class="nav-btn active" data-section="inicio">Inicio</button>
+            <button class="nav-btn" data-section="explorar">Explorar</button>
+            <button class="nav-btn" data-section="minijuegos">Minijuegos</button>
+            <button class="nav-btn" data-section="preguntas">Preguntas rápidas</button>
+            <button class="nav-btn" data-section="sorpresa">Sorpresa final</button>
+        </nav>
+
+        <p class="sidebar-footer">CREATED WITH PURPOSE</p>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="inicio" class="page-section active">
+            <p class="subtitle">A SPECIAL EXPERIENCE</p>
+            <h1>BLACK <span>WOLF</span></h1>
+            <p>Algunas experiencias merecen ser diferentes.</p>
+            <button class="main-btn" data-go="explorar">DESCUBRIR</button>
+        </section>
+
+        <section id="explorar" class="page-section">
+            <h1>EXPLORAR</h1>
+            <p>Un pequeño espacio para descubrir cosas nuevas.</p>
+        </section>
+
+        <section id="minijuegos" class="page-section">
+            <h1>MINIJUEGOS</h1>
+            <p>Pequeños retos para poner a prueba tu suerte.</p>
+        </section>
+
+        <section id="preguntas" class="page-section">
+            <h1>PREGUNTAS RÁPIDAS</h1>
+            <p>Responde sin pensarlo demasiado.</p>
+            <div id="question-container"></div>
+        </section>
+
+        <section id="sorpresa" class="page-section">
+            <h1>UNA SORPRESA</h1>
+            <p>Hay cosas que se descubren al final...</p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

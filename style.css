@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #080710;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    padding: 35px 22px;
+    background: #100d1d;
+    border-right: 1px solid #302044;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    border: 2px solid #a855f7;
+    color: #c084fc;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 20px #8b5cf633;
+}
+
+.sidebar h2 {
+    font-size: 19px;
+    letter-spacing: 3px;
+    margin-bottom: 45px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-btn {
+    background: transparent;
+    color: #aaa3b8;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: #28183c;
+    color: #d8b4fe;
+    box-shadow: inset 3px 0 #a855f7;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    color: #655b73;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.main-content {
+    min-height: 100vh;
+    margin-left: 260px;
+    display: grid;
+    place-items: center;
+    padding: 40px;
+    background:
+        radial-gradient(circle at 70% 40%, #35164d55, transparent 35%),
+        radial-gradient(circle at 20% 80%, #24113c55, transparent 35%),
+        #080710;
+}
+
+.page-section {
+    display: none;
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+    animation: appear 0.5s ease;
+}
+
+.page-section.active {
+    display: block;
+}
+
+.subtitle {
+    color: #c084fc;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.page-section h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.page-section h1 span {
+    color: #a855f7;
+    text-shadow: 0 0 25px #a855f766;
+}
+
+.page-section p {
+    color: #aaa3b8;
+    line-height: 1.7;
+}
+
+.main-btn {
+    margin-top: 35px;
+    padding: 15px 35px;
+    border: 1px solid #a855f7;
+    border-radius: 30px;
+    color: white;
+    background: #5b21b6;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: #9333ea;
+    box-shadow: 0 0 25px #a855f766;
+    transform: translateY(-3px);
+}
+
+/* PREGUNTAS RAPIDAS */
+
+#question-container {
+    margin-top: 35px;
+    padding: 30px;
+    background: #151020;
+    border: 1px solid #49266b;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #8b5cf622;
+}
+
+.question-counter {
+    color: #c084fc !important;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+#question-container h2 {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.answer-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.answer-btn,
+#restart-questions {
+    padding: 15px 25px;
+    border: 1px solid #7541a5;
+    border-radius: 12px;
+    background: #241536;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.answer-btn:hover,
+#restart-questions:hover {
+    background: #7134a8;
+    border-color: #c084fc;
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px #a855f755;
+}
+
+.answer-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+#answer-feedback {
+    margin-top: 25px;
+    color: #d8b4fe !important;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 80px 25px 35px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 20;
+        background: #28183c;
+        color: white;
+        border: 1px solid #a855f7;
+        border-radius: 8px;
+        padding: 10px 14px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
